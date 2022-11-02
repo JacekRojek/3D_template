@@ -5,6 +5,7 @@ import Renderer from "./Renderer";
 import Time from "./utils/Time";
 import World from "./World/World";
 import Resources from "./utils/Resources";
+import assets from "./Utils/assets.js";
 
 export default class Experience {
   static instance;
@@ -19,7 +20,7 @@ export default class Experience {
     this.time = new Time();
     this.camera = new Camera();
     this.render = new Renderer();
-    this.resources = new Resources();
+    this.resources = new Resources(assets);
     this.world = new World();
     this.time.on("update", () => {
       this.update();
